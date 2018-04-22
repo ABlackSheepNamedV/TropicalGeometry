@@ -3,10 +3,8 @@ require(rcdd)
 findNormalCone <- function(vectorOfAreaSums, vectorOfInterest) {
   dimension <- dim(vectorOfAreaSums)[2]
   
-  
   polytope.Vrep <- cbind(0,1,vectorOfAreaSums)
   polytope.Hrep <- scdd(polytope.Vrep, representation = "V")
-  
   
   half.space.consts <- polytope.Hrep $ output[,2]
   half.space.vectors <- polytope.Hrep $ output[,-c(1,2)]
